@@ -55,7 +55,7 @@ function Navbar() {
         </a>
         <nav className="hidden md:flex items-center gap-16">
           <a 
-            className="text-sm text-[#5d5970]/80 hover:text-[#5d5970] transition-colors cursor-pointer" 
+            className="text-base font-medium text-[#5d5970]/80 hover:text-[#5d5970] transition-colors cursor-pointer relative group" 
             href="#features"
             onClick={(e) => {
               e.preventDefault()
@@ -63,9 +63,10 @@ function Navbar() {
             }}
           >
             Features
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#5d5970] transition-all duration-300 ease-out group-hover:w-full"></span>
           </a>
           <a 
-            className="text-sm text-[#5d5970]/80 hover:text-[#5d5970] transition-colors cursor-pointer" 
+            className="text-base font-medium text-[#5d5970]/80 hover:text-[#5d5970] transition-colors cursor-pointer relative group" 
             href="#stories"
             onClick={(e) => {
               e.preventDefault()
@@ -73,9 +74,10 @@ function Navbar() {
             }}
           >
             Stories
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#5d5970] transition-all duration-300 ease-out group-hover:w-full"></span>
           </a>
           <a
-            className="text-sm text-[#5d5970]/80 hover:text-[#5d5970] transition-colors cursor-pointer"
+            className="text-base font-medium text-[#5d5970]/80 hover:text-[#5d5970] transition-colors cursor-pointer relative group"
             href="#app"
             onClick={(e) => {
               e.preventDefault()
@@ -83,12 +85,13 @@ function Navbar() {
             }}
           >
             App
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#5d5970] transition-all duration-300 ease-out group-hover:w-full"></span>
           </a>
         </nav>
         <div className="flex items-center">
           <div className="relative">
             <button
-              className="h-9 px-4 rounded-lg bg-[#fcd0c8] text-[#5d5970] hover:bg-[#fcd0c8]/90 shadow-sm border border-gray-300 backdrop-blur-md cursor-pointer hover:outline hover:outline-2 hover:outline-gray-400 transition-all duration-50 ease-out text-sm"
+              className="h-9 px-4 rounded-lg bg-[#fcd0c8] text-[#5d5970] hover:bg-[#fcd0c8]/90 shadow-sm border border-gray-300 backdrop-blur-md cursor-pointer hover:outline hover:outline-2 hover:outline-gray-400 hover:outline-offset-2 transition-all duration-50 ease-out text-sm"
               onClick={() => window.location.assign(MOBILE_APP_URL)}
               aria-label="Get started on SoulSignal"
             >
