@@ -7,8 +7,39 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   title: "SoulSignal",
-  description: "Meaningful connections, made easy.",
+  description: "Find the perfect match for you with Statistics and Love combined.",
   generator: "v0.app",
+  viewport: "width=device-width, initial-scale=1.0",
+  themeColor: "#f09898",
+  icons: {
+    icon: [
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon/favicon.ico",
+    apple: "/favicon/apple-touch-icon.png",
+    other: [
+      { rel: "android-chrome", url: "/favicon/android-chrome-192x192.png", sizes: "192x192" },
+      { rel: "android-chrome", url: "/favicon/android-chrome-512x512.png", sizes: "512x512" },
+    ],
+  },
+  manifest: "/favicon/site.webmanifest",
+  openGraph: {
+    type: "website",
+    url: "https://soulsignal.netlify.app/",
+    title: "SoulSignal",
+    description: "Find the perfect match for you with Statistics and Love combined.",
+    image: "/webimage.png",
+    siteName: "SoulSignal",
+  },
+  twitter: {
+    card: "summary_large_image",
+    url: "https://soulsignal.netlify.app/",
+    title: "SoulSignal",
+    description: "Find the perfect match for you with Statistics and Love combined.",
+    images: ["/webimage.png"],
+  },
 }
 
 // display font for big headings/brand
