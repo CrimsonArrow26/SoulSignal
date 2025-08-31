@@ -88,7 +88,7 @@ function Navbar() {
         <div className="flex items-center">
           <div className="relative">
             <button
-              className="h-11 px-5 rounded-lg bg-[#fcd0c8] text-[#5d5970] hover:bg-[#fcd0c8]/90 shadow-sm border border-gray-300 backdrop-blur-md cursor-pointer hover:outline hover:outline-2 hover:outline-gray-400 hover:outline-offset-2 transition-all duration-50 ease-out"
+              className="h-9 px-4 rounded-lg bg-[#fcd0c8] text-[#5d5970] hover:bg-[#fcd0c8]/90 shadow-sm border border-gray-300 backdrop-blur-md cursor-pointer hover:outline hover:outline-2 hover:outline-gray-400 hover:outline-offset-2 transition-all duration-50 ease-out"
               onClick={() => window.location.assign(MOBILE_APP_URL)}
               aria-label="Get started on SoulSignal"
             >
