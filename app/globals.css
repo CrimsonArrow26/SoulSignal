@@ -132,3 +132,30 @@
     font-family: var(--font-baloo), ui-sans-serif, system-ui, sans-serif;
   }
 }
+
+::selection {
+  background: #fcd0c8;
+  color: #5d5970;
+}
+
+::-moz-selection {
+  background: #fcd0c8;
+  color: #5d5970;
+}
+
+/* Custom button hover effects */
+.navbar-button {
+  transition: all 0.3s ease;
+}
+
+.navbar-button:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

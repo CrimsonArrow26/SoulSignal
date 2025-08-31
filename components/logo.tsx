@@ -15,7 +15,8 @@ export function Logo({ withText = true, size = 28, className }: Props) {
         alt="SoulSignal logo"
         width={size}
         height={size}
-        className="h-7 w-7 md:h-8 md:w-8 select-none"
+        className="select-none"
+        style={{ width: size, height: size }}
       />
       {withText && <span className="font-display text-[#5d5970] text-lg md:text-xl tracking-wide">SoulSignal</span>}
     </div>

@@ -51,17 +51,31 @@ function Navbar() {
     >
       <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2" aria-label="SoulSignal Home">
-          <Logo withText size={28} />
+          <Logo withText size={40} />
         </a>
         <nav className="hidden md:flex items-center gap-6">
-          <a className="text-sm text-[#5d5970]/80 hover:text-[#5d5970] transition-colors" href="#features">
+          <a 
+            className="text-sm text-[#5d5970]/80 hover:text-[#5d5970] transition-colors cursor-pointer" 
+            href="#features"
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById("features")?.scrollIntoView({ behavior: "smooth", block: "start" })
+            }}
+          >
             Features
           </a>
-          <a className="text-sm text-[#5d5970]/80 hover:text-[#5d5970] transition-colors" href="#stories">
+          <a 
+            className="text-sm text-[#5d5970]/80 hover:text-[#5d5970] transition-colors cursor-pointer" 
+            href="#stories"
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById("stories")?.scrollIntoView({ behavior: "smooth", block: "start" })
+            }}
+          >
             Stories
           </a>
           <a
-            className="text-sm text-[#5d5970]/80 hover:text-[#5d5970] transition-colors"
+            className="text-sm text-[#5d5970]/80 hover:text-[#5d5970] transition-colors cursor-pointer"
             href="#app"
             onClick={(e) => {
               e.preventDefault()
@@ -72,13 +86,16 @@ function Navbar() {
           </a>
         </nav>
         <div className="flex items-center">
-          <Button
-            className="h-11 px-5 rounded-lg bg-[#fcd0c8] text-[#5d5970] hover:bg-[#fcd0c8]/90 shadow-sm border border-white/40 backdrop-blur-md"
-            onClick={() => window.location.assign(MOBILE_APP_URL)}
-            aria-label="Get started on SoulSignal"
-          >
-            Get started
-          </Button>
+          <div className="relative">
+            <button
+              className="h-11 px-5 rounded-lg bg-[#fcd0c8] text-[#5d5970] hover:bg-[#fcd0c8]/90 shadow-sm border border-white/40 backdrop-blur-md cursor-pointer hover:outline hover:outline-2 hover:outline-[#5d5970] hover:outline-offset-2 transition-all duration-500 ease-out"
+              onClick={() => window.location.assign(MOBILE_APP_URL)}
+              aria-label="Get started on SoulSignal"
+            >
+              Get started
+            </button>
+
+          </div>
         </div>
       </div>
     </header>
@@ -102,7 +119,7 @@ function Hero() {
     tl.fromTo(titleRef.current, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 })
       .fromTo(subRef.current, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, "-=0.3")
       .fromTo(ctaRef.current, { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, "-=0.25")
-      .fromTo(imgRef.current, { scale: 0.96, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.7 }, "-=0.35")
+      .fromTo(imgRef.current, { scale: 0.96, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4 }, "-=0.15")
     return () => {
       tl.kill()
     }
@@ -124,13 +141,13 @@ function Hero() {
           </p>
 
           <div ref={ctaRef} className="mt-4">
-            <Button
-              className="h-11 px-5 rounded-lg bg-[#fcd0c8] text-[#5d5970] hover:bg-[#fcd0c8]/90 shadow-sm border border-white/40 backdrop-blur-md"
+            <button
+              className="h-11 px-5 rounded-lg bg-[#fcd0c8] text-[#5d5970] hover:bg-[#fcd0c8]/90 shadow-sm border border-white/40 backdrop-blur-md hover:scale-105 hover:shadow-lg/20 transition-all duration-100 cursor-pointer"
               onClick={() => window.location.assign(MOBILE_APP_URL)}
               aria-label="Open SoulSignal mobile web app"
             >
               Get started
-            </Button>
+            </button>
           </div>
 
           <div className="flex items-center gap-4 pt-2">
@@ -193,7 +210,7 @@ function Features() {
           {features.map(({ title, desc, Icon }) => (
             <article
               key={title}
-              className="rounded-lg border border-white/40 bg-white/60 backdrop-blur-md p-5 flex flex-col gap-3 shadow-sm"
+              className="rounded-lg border border-white/40 bg-white/60 backdrop-blur-md p-5 flex flex-col gap-3 shadow-sm hover:scale-105 hover:shadow-lg/20 transition-all duration-250"
             >
               <div
                 className="h-10 w-10 flex items-center justify-center rounded-full bg-[#fcd0c8] text-[#5d5970]"
@@ -229,8 +246,9 @@ function Stories() {
   ]
 
   return (
-    <section id="stories" ref={sectionRef} aria-label="Success stories">
-      <div className="mx-auto max-w-6xl px-4 py-14 md:py-18">
+    <section id="stories" ref={sectionRef} aria-label="Success stories" className="group">
+      <div className="mx-auto max-w-6xl px-4 py-14 md:py-18 relative">
+
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-8 md:mb-10">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-[#5d5970]">Stories from SoulSignal</h2>
           <p className="text-[#5d5970]/80 leading-relaxed">
@@ -242,10 +260,16 @@ function Stories() {
           {stories.map((s) => (
             <article
               key={s.name}
-              className="rounded-xl border border-white/40 bg-white/60 backdrop-blur-md p-6 md:p-8 shadow-[0_8px_24px_rgba(93,89,112,0.08)]"
+              className="group/card rounded-xl border border-white/40 bg-white/60 backdrop-blur-md p-6 md:p-8 shadow-[0_8px_24px_rgba(93,89,112,0.08)] relative overflow-hidden"
               data-animate="story-card"
             >
-              <figure className="flex items-start gap-4">
+              <div className="absolute inset-0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
+
+                <div className="absolute bottom-6 right-6 text-pink-300 animate-bounce" style={{animationDelay: '0.3s'}}>💕</div>
+                <div className="absolute bottom-4 left-4 text-red-300 animate-pulse" style={{animationDelay: '0.6s'}}>💌💝</div>
+              </div>
+              
+              <figure className="flex items-start gap-4 relative z-10">
                 <img
                   src={s.img || "/placeholder.svg?height=80&width=80&query=indian%20couple%20portrait"}
                   alt={`${s.name} smiling together`}
