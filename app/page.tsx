@@ -53,7 +53,7 @@ function Navbar() {
         <a href="#" className="flex items-center gap-2" aria-label="SoulSignal Home">
           <Logo withText size={40} />
         </a>
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-16">
           <a 
             className="text-sm text-[#5d5970]/80 hover:text-[#5d5970] transition-colors cursor-pointer" 
             href="#features"
